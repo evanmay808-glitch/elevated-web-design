@@ -34,9 +34,11 @@ export const Navbar = () => {
         }`}
       >
         <a href="#top" className="flex items-center gap-2.5 group" data-testid="brand-logo">
-          <span className="grid place-items-center h-9 w-9 rounded-xl bg-[hsl(var(--accent))] text-[hsl(var(--bg))] font-display font-extrabold text-lg">
-            E
-          </span>
+          <img
+            src="/logo.png"
+            alt="Elevated Web Design"
+            className="h-9 w-9 rounded-xl object-cover"
+          />
           <span className="font-display font-semibold text-[15px] tracking-tight hidden sm:block">
             Elevated<span className="text-[hsl(var(--muted))]"> Web Design</span>
           </span>
@@ -44,7 +46,7 @@ export const Navbar = () => {
 
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            <a
+            
               key={l.href}
               href={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
@@ -56,7 +58,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
+          
             href={CONTACT.mailto}
             data-testid="nav-quote-btn"
             className="btn-accent hidden sm:inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm"
@@ -84,7 +86,7 @@ export const Navbar = () => {
             data-testid="mobile-menu"
           >
             {links.map((l) => (
-              <a
+              
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
@@ -93,7 +95,7 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <a
+            
               href={CONTACT.mailto}
               className="btn-accent mt-1 flex items-center justify-center gap-1.5 rounded-xl px-5 py-3 text-sm"
             >
