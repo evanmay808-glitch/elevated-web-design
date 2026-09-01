@@ -1,0 +1,10 @@
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.portfolio-frame {
+  pointer-events: none;
+  border: 0;
+  transform-origin: top left;
+}
