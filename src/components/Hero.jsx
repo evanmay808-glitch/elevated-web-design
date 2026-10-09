@@ -36,7 +36,7 @@ export const Hero = () => {
             className="mt-6 text-base sm:text-lg text-[hsl(var(--muted))] max-w-xl leading-relaxed"
           >
             I design and build fast, modern websites for small businesses — built to look
-            premium and turn visitors into paying customers. See a free homepage conceptMore customers, from a website that actually looks <span className="text-gradient">elevated</span>.
+            premium and turn visitors into paying customers. See a free homepage concept
             of your business before you commit to anything.
           </motion.p>
 
