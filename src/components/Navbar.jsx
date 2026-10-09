@@ -36,11 +36,11 @@ export const Navbar = () => {
         <a href="#top" className="flex items-center gap-2.5 group" data-testid="brand-logo">
           <img
             src="/logo.png"
-            alt="Elevated Web Design"
+            alt="Evans Web Design"
             className="h-9 w-9 rounded-xl object-cover"
           />
           <span className="font-display font-semibold text-[15px] tracking-tight hidden sm:block">
-            Elevated<span className="text-[hsl(var(--muted))]"> Web Design</span>
+            Evans<span className="text-[hsl(var(--muted))]"> Web Design</span>
           </span>
         </a>
 

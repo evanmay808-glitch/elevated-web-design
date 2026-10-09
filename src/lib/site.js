@@ -1,13 +1,13 @@
 export const CONTACT = {
   name: "Evan May",
-  brand: "Elevated Web Design",
+  brand: "Evans Web Design",
   phoneDisplay: "07716 355201",
   phoneRaw: "07716355201",
   email: "evanmay808@gmail.com",
   instagram: "evanmay59",
   instagramUrl: "https://instagram.com/evanmay59",
   get mailto() {
-    const subject = encodeURIComponent("Website enquiry — Elevated Web Design");
+    const subject = encodeURIComponent("Website enquiry — Evans Web Design");
     const body = encodeURIComponent(
       "Hi Evan,\n\nI'd like a quote for a website. Here are a few details:\n\n- What I do / business name:\n- What I need:\n- Timeline:\n\nThanks!"
     );

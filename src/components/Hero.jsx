@@ -28,7 +28,7 @@ export const Hero = () => {
             variants={item}
             className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-[1.02]"
           >
-            More customers, from a website that actually looks <span className="text-gradient">elevated</span>.
+            More customers, from a website that actually looks <span className="text-gradient">Evans</span>.
           </motion.h1>
 
           <motion.p
