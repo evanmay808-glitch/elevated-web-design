@@ -50,7 +50,7 @@ export const Pricing = () => {
               <span className="text-[hsl(var(--muted))] mb-2 text-sm">upfront to start</span>
             </div>
             <p className="text-[hsl(var(--accent))] text-sm mt-2 font-medium">
-              then £50 a month starting from 28th each month if you want to keep it
+              then £50 a month
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               {[
@@ -95,7 +95,7 @@ export const Pricing = () => {
               {[
                 "Professionally designed site, fully managed",
                 "Hosting & domain included",
-                "Cancel or upgrade to owning it anytime",
+                "Cancel or upgrade for £299 to owning it anytime",
                 "Free homepage concept before you commit",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-[hsl(var(--muted))]">
