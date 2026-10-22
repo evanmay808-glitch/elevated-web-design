@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Phone, Sparkles } from "lucide-react";
-import { CONTACT } from "../lib/site";
+import { CONTACT, isMobile, emailLinkProps } from "../lib/site";
 
 const container = {
   hidden: {},
@@ -12,6 +13,8 @@ const item = {
 };
 
 export const Hero = () => {
+  const [copied, setCopied] = useState(false);
+
   return (
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden" data-testid="hero-section">
       <div className="relative z-20 mx-auto max-w-6xl px-5 min-h-[100svh] flex flex-col justify-center pt-24 pb-16">
@@ -42,7 +45,7 @@ export const Hero = () => {
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
             <a
-              href={CONTACT.mailto}
+              {...emailLinkProps("Free homepage concept request")}
               data-testid="hero-quote-btn"
               className="btn-accent inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm"
             >
@@ -57,10 +60,20 @@ export const Hero = () => {
             </a>
             <a
               href={CONTACT.tel}
+              onClick={
+                isMobile
+                  ? undefined
+                  : (e) => {
+                      e.preventDefault();
+                      navigator.clipboard?.writeText(CONTACT.phoneDisplay);
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2000);
+                    }
+              }
               data-testid="hero-call-btn"
               className="inline-flex items-center gap-2 px-3 py-3.5 text-sm text-[hsl(var(--muted))] hover:text-[hsl(var(--fg))] transition-colors"
             >
-              <Phone size={16} /> {CONTACT.phoneDisplay}
+              <Phone size={16} /> {copied ? "Number copied!" : CONTACT.phoneDisplay}
             </a>
           </motion.div>
 
