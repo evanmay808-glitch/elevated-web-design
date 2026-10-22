@@ -2,10 +2,10 @@ export const CONTACT = {
   name: "Evan May",
   brand: "Evans Web Design",
   phoneDisplay: "07716 355201",
-  phoneRaw: "07716355201",
+  phoneRaw: "+447716355201",
   email: "evanmay808@gmail.com",
   instagram: "evanmay59",
-  instagramUrl: "https://instagram.com/evanmay59",
+  instagramUrl: "https://ig.me/m/evanmay59",
   get mailto() {
     const subject = encodeURIComponent("Website enquiry — Evans Web Design");
     const body = encodeURIComponent(
@@ -13,9 +13,37 @@ export const CONTACT = {
     );
     return `mailto:${this.email}?subject=${subject}&body=${body}`;
   },
+  get gmailCompose() {
+    const subject = encodeURIComponent("Website enquiry — Evans Web Design");
+    const body = encodeURIComponent(
+      "Hi Evan,\n\nI'd like a quote for a website. Here are a few details:\n\n- What I do / business name:\n- What I need:\n- Timeline:\n\nThanks!"
+    );
+    return `https://mail.google.com/mail/?view=cm&to=${this.email}&su=${subject}&body=${body}`;
+  },
   get tel() {
     return `tel:${this.phoneRaw}`;
   },
+};
+
+export const isMobile =
+  typeof navigator !== "undefined" &&
+  /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+// Use on any email button: <a {...emailLinkProps("Subject here")}>
+// Phones open the mail app. Desktop opens Gmail in a new tab.
+export const emailLinkProps = (
+  subject = "Website enquiry — Evans Web Design",
+  body = "Hi Evan,\n\nI'd like to find out more. Here are a few details:\n\n- What I do / business name:\n- What I need:\n- Timeline:\n\nThanks!"
+) => {
+  const s = encodeURIComponent(subject);
+  const b = encodeURIComponent(body);
+  return isMobile
+    ? { href: `mailto:${CONTACT.email}?subject=${s}&body=${b}` }
+    : {
+        href: `https://mail.google.com/mail/?view=cm&to=${CONTACT.email}&su=${s}&body=${b}`,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      };
 };
 
 export const PORTFOLIO = [
