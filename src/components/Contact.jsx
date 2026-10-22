@@ -1,35 +1,47 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Instagram, ArrowUpRight } from "lucide-react";
-import { CONTACT } from "../lib/site";
-
-const methods = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: CONTACT.email,
-    href: CONTACT.mailto,
-    testid: "contact-email",
-    external: false,
-  },
-  {
-    icon: Phone,
-    label: "Call or text",
-    value: CONTACT.phoneDisplay,
-    href: CONTACT.tel,
-    testid: "contact-phone",
-    external: false,
-  },
-  {
-    icon: Instagram,
-    label: "Instagram",
-    value: `@${CONTACT.instagram}`,
-    href: CONTACT.instagramUrl,
-    testid: "contact-instagram",
-    external: true,
-  },
-];
+import { CONTACT, isMobile, emailLinkProps } from "../lib/site";
 
 export const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const methods = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: CONTACT.email,
+      linkProps: emailLinkProps("Free homepage concept request"),
+      testid: "contact-email",
+    },
+    {
+      icon: Phone,
+      label: "Call or text",
+      value: copied ? "Number copied!" : CONTACT.phoneDisplay,
+      linkProps: { href: CONTACT.tel },
+      onClick: isMobile
+        ? undefined
+        : (e) => {
+            e.preventDefault();
+            navigator.clipboard?.writeText(CONTACT.phoneDisplay);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+          },
+      testid: "contact-phone",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: `@${CONTACT.instagram}`,
+      linkProps: {
+        href: CONTACT.instagramUrl,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      },
+      testid: "contact-instagram",
+    },
+  ];
+
   return (
     <section id="contact" className="relative z-20 py-24 sm:py-32" data-testid="contact-section">
       <div className="mx-auto max-w-6xl px-5">
@@ -41,7 +53,7 @@ export const Contact = () => {
           className="glass rounded-[2rem] p-8 sm:p-14 text-center relative overflow-hidden"
         >
           <div
-            className="absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full blur-3xl opacity-20"
+            className="absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full blur-3xl opacity-20 pointer-events-none"
             style={{ background: "hsl(var(--accent))" }}
             aria-hidden="true"
           />
@@ -60,9 +72,9 @@ export const Contact = () => {
               return (
                 <a
                   key={m.label}
-                  href={m.href}
+                  {...m.linkProps}
+                  onClick={m.onClick}
                   data-testid={m.testid}
-                  {...(m.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="group rounded-2xl border border-[hsl(var(--border))] p-6 hover:border-[hsl(var(--accent)/0.6)] hover:bg-[hsl(var(--surface)/0.5)] transition-all duration-300 flex flex-col items-center gap-3"
                 >
                   <span className="grid place-items-center h-12 w-12 rounded-xl bg-[hsl(var(--accent)/0.12)] text-[hsl(var(--accent))] group-hover:scale-110 transition-transform">
