@@ -3,9 +3,9 @@ import { Check, ArrowUpRight } from "lucide-react";
 import { CONTACT } from "../lib/site";
 
 const updates = [
-  { label: "Text or image change", price: "£25" },
-  { label: "Text + images update", price: "£50" },
-  { label: "Complete redesign", price: "£200" },
+  { label: "Text or image change", price: "£40" },
+  { label: "Text + images update", price: "£60" },
+  { label: "Complete redesign", price: "£100" },
 ];
 
 const fade = {
@@ -27,7 +27,7 @@ export const Pricing = () => {
             Simple, honest pricing.
           </h2>
           <p className="text-[hsl(var(--muted))] mt-4 text-base sm:text-lg">
-            No hidden fees. Start for just £50, or rent monthly — you decide.
+            No hidden fees. Start for just £299, or rent monthly for £30 (you have to pay more for updates though) — you decide.
           </p>
         </div>
 
@@ -46,21 +46,18 @@ export const Pricing = () => {
             </span>
             <h3 className="font-display font-semibold text-xl">Own your website</h3>
             <div className="mt-4 flex items-end gap-2">
-              <span className="font-display font-extrabold text-5xl">£50</span>
+              <span className="font-display font-extrabold text-5xl">£299</span>
               <span className="text-[hsl(var(--muted))] mb-2 text-sm">upfront to start</span>
             </div>
             <p className="text-[hsl(var(--accent))] text-sm mt-2 font-medium">
-              then £450 after 2 months if you want to keep it
-            </p>
-            <p className="text-[hsl(var(--muted))] text-xs mt-2">
-              + £25 / month for hosting, domain & maintenance once you continue
+              then £50 a month starting from 28th each month if you want to keep it
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               {[
-                "Only £50 to get started — low risk",
-                "Live with your fully custom site for 2 months",
-                "Love it? Pay £450 to keep it (you own it)",
-                "Not for you? No payment, site is taken down — I tell you this upfront",
+                "Only £299 to get started — low risk",
+                "£50 a month, includes maintainence, domain costs and 1 monthly update of your choice",
+                "dont want to pay for £50 a month? lower down to £30 a month and instead pay updates",
+                "If you ever have problems or want to cancel, just message",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-[hsl(var(--muted))]">
                   <Check size={17} className="text-[hsl(var(--accent))] mt-0.5 shrink-0" />
@@ -88,7 +85,7 @@ export const Pricing = () => {
           >
             <h3 className="font-display font-semibold text-xl">Rent a website</h3>
             <div className="mt-4 flex items-end gap-2">
-              <span className="font-display font-extrabold text-5xl">£50</span>
+              <span className="font-display font-extrabold text-5xl">£30</span>
               <span className="text-[hsl(var(--muted))] mb-2 text-sm">/ month</span>
             </div>
             <p className="text-[hsl(var(--muted))] text-sm mt-2">
@@ -132,7 +129,7 @@ export const Pricing = () => {
             <div>
               <h3 className="font-display font-semibold text-xl">Updates & changes</h3>
               <p className="text-[hsl(var(--muted))] text-sm mt-1">
-                Need a tweak later? Pay only for what you need.
+                Need a tweak later? Pay only for what you need (if your not under the £50 monthly contract).
               </p>
             </div>
             <a
