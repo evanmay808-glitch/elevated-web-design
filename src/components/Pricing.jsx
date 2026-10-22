@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowUpRight } from "lucide-react";
-import { CONTACT } from "../lib/site";
+import { CONTACT, emailLinkProps } from "../lib/site";
 
 const updates = [
   { label: "Text or image change", price: "£40" },
@@ -50,13 +50,13 @@ export const Pricing = () => {
               <span className="text-[hsl(var(--muted))] mb-2 text-sm">upfront to start</span>
             </div>
             <p className="text-[hsl(var(--accent))] text-sm mt-2 font-medium">
-              then £50 a month
+              then £50 a month starting from 28th each month if you want to keep it
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               {[
                 "Only £299 to get started — low risk",
-                "£50 a month, includes maintainence, domain costs and 1 monthly update of your choice",
-                "dont want to pay for £50 a month? lower down to £30 a month and instead pay updates",
+                "£50 a month, includes maintenance, domain costs and 1 monthly update of your choice",
+                "Don't want to pay £50 a month? Drop to £30 a month and pay per update instead",
                 "If you ever have problems or want to cancel, just message",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-[hsl(var(--muted))]">
@@ -66,7 +66,7 @@ export const Pricing = () => {
               ))}
             </ul>
             <a
-              href={CONTACT.mailto}
+              {...emailLinkProps("Enquiry — Own your website (£299)")}
               data-testid="pricing-own-cta"
               className="btn-accent mt-8 flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm"
             >
@@ -95,7 +95,7 @@ export const Pricing = () => {
               {[
                 "Professionally designed site, fully managed",
                 "Hosting & domain included",
-                "Cancel or upgrade for £299 to owning it anytime",
+                "Cancel or upgrade to owning it anytime",
                 "Free homepage concept before you commit",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-[hsl(var(--muted))]">
@@ -129,11 +129,11 @@ export const Pricing = () => {
             <div>
               <h3 className="font-display font-semibold text-xl">Updates & changes</h3>
               <p className="text-[hsl(var(--muted))] text-sm mt-1">
-                Need a tweak later? Pay only for what you need (if your not under the £50 monthly contract).
+                Need a tweak later? Pay only for what you need (if you're not under the £50 monthly contract).
               </p>
             </div>
             <a
-              href={CONTACT.mailto}
+              {...emailLinkProps("Website update request")}
               className="text-sm text-[hsl(var(--accent))] hover:underline inline-flex items-center gap-1"
             >
               Request an update <ArrowUpRight size={14} />
