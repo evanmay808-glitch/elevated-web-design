@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { CONTACT } from "../lib/site";
+import { emailLinkProps } from "../lib/site";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -59,7 +59,7 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-2">
           <a
-            href={CONTACT.mailto}
+            {...emailLinkProps("Free homepage concept request")}
             data-testid="nav-quote-btn"
             className="btn-accent hidden sm:inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm"
           >
@@ -96,7 +96,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href={CONTACT.mailto}
+              {...emailLinkProps("Free homepage concept request")}
               className="btn-accent mt-1 flex items-center justify-center gap-1.5 rounded-xl px-5 py-3 text-sm"
             >
               Get a free demo <ArrowUpRight size={16} />
