@@ -12,7 +12,7 @@ import { CookieConsent } from "./components/CookieConsent";
 const policyRoutes = ["privacy", "cookies", "terms"];
 
 function App() {
-  const path = window.location.pathname.replace(/^\\/+|\\/+$/g, "");
+  const path = window.location.pathname.split("/").filter(Boolean).join("/");
   const isPolicyPage = policyRoutes.includes(path);
 
   return (
