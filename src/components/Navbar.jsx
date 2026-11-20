@@ -3,10 +3,10 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { emailLinkProps } from "../lib/site";
 
 const links = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const Navbar = () => {
@@ -16,8 +16,8 @@ export const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-6xl px-5 mt-3">
         <div className="flex items-center justify-between rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--surface))]/95 px-4 py-3 shadow-sm backdrop-blur">
-          <a href="#top" className="flex items-center gap-3" aria-label="Evans Web Design home" onClick={() => setOpen(false)}>
-            <img src="/logo.svg" alt="" className="h-10 w-10 rounded-md" />
+          <a href="/" className="flex items-center gap-3" aria-label="Evans Web Design home" onClick={() => setOpen(false)}>
+            <img src="/logo.png" alt="" className="h-10 w-10 object-contain" />
             <span className="font-semibold tracking-tight text-[hsl(var(--fg))]">Evans <span className="font-normal text-[hsl(var(--muted))]">Web Design</span></span>
           </a>
           <nav className="hidden md:flex items-center gap-7" aria-label="Main navigation">
