@@ -56,14 +56,14 @@ const policyPages = {
 };
 
 export const Legal = ({ page }) => {
-  const currentPage = page || window.location.pathname.replace(/^\\/+|\\/+$/g, "");
+  const currentPage = page || window.location.pathname.split("/").filter(Boolean).join("/");
   const policy = policyPages[currentPage] || policyPages.terms;
   const Content = policy.Content;
 
   return (
     <section className="min-h-[65vh] bg-[hsl(var(--surface))] py-14 sm:py-20">
       <div className="mx-auto max-w-3xl px-5">
-        <a href="/" className="text-sm text-[hsl(var(--muted))] hover:text-[hsl(var(--fg))]">← Back to home</a>
+        <a href="/" className="text-sm text-[hsl(var(--muted))] hover:text-[hsl(var(--fg))]">â Back to home</a>
         <p className="section-eyebrow mt-10">Evans Web Design</p>
         <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{policy.title}</h1>
         <p className="mt-3 mb-10 max-w-2xl text-sm leading-relaxed text-[hsl(var(--muted))]">{policy.intro}</p>
