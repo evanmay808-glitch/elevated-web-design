@@ -20,7 +20,7 @@ export const Legal = () => (
         <h3>How long information is kept</h3>
         <p>Messages are kept only for as long as reasonably needed to deal with the enquiry, provide services, maintain appropriate records or meet legal requirements.</p>
         <h3>Your rights</h3>
-        <p>UK data protection law may give you rights to request access to, correction or deletion of your personal information, or to object to or restrict certain processing. To ask a question or make a request, email <a className="underline" href={CONTACT.getMailto()}> {CONTACT.email}</a>. You can also raise a concern with the Information Commissioner's Office (ICO).</p>
+        <p>UK data protection law may give you rights to request access to, correction or deletion of your personal information, or to object to or restrict certain processing. To ask a question or make a request, email <a className="underline" href={CONTACT.mailto}>{CONTACT.email}</a>. You can also raise a concern with the Information Commissioner's Office (ICO).</p>
       </article>
 
       <article id="cookies" className="legal-copy scroll-mt-28 mt-12 border-t border-[hsl(var(--border))] pt-8">
@@ -50,7 +50,7 @@ export const Legal = () => (
         <h3>Governing law</h3>
         <p>These terms are governed by the laws of England and Wales, and disputes will be subject to the courts of England and Wales, except where applicable law provides otherwise.</p>
         <h3>Contact</h3>
-        <p>Questions about these terms can be sent to <a className="underline" href={CONTACT.getMailto()}>{CONTACT.email}</a>.</p>
+        <p>Questions about these terms can be sent to <a className="underline" href={CONTACT.mailto}>{CONTACT.email}</a>.</p>
       </article>
       <p className="mt-10 border-t border-[hsl(var(--border))] pt-5 text-xs leading-relaxed text-[hsl(var(--muted))]">These policies are a practical starting point for this website, not a substitute for legal advice. They should be checked against the services, tools and data practices actually used by the business before relying on them as final legal documents.</p>
     </div>
