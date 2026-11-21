@@ -24,21 +24,21 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-[hsl(var(--muted))] mb-6"
           >
             <Sparkles size={14} className="text-[hsl(var(--accent))]" />
-            Freelance web designer · UK based
+            Freelance web designer Â· UK based
           </motion.div>
 
           <motion.h1
             variants={item}
             className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-[1.02]"
           >
-            More customers, from a website that looks <span className="text-gradient">elevated</span>.
+            More clients, from a website that looks <span className="text-gradient">elevated</span>.
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-6 text-base sm:text-lg text-[hsl(var(--muted))] max-w-xl leading-relaxed"
           >
-            I design and build fast, modern websites for small businesses — built to look
+            I design and build fast, modern websites for small businesses â built to look
             premium and turn visitors into paying customers. See a free homepage concept
             of your business before you commit to anything.
           </motion.p>
@@ -90,7 +90,7 @@ export const Hero = () => {
             <div className="h-8 w-px bg-[hsl(var(--border))]" />
             <div>
               <div className="font-display text-xl text-[hsl(var(--fg))]">UK</div>
-              based · quick reply
+              based Â· quick reply
             </div>
           </motion.div>
         </motion.div>
