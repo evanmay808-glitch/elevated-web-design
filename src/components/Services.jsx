@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Palette, Wrench, RefreshCw, Server, Rocket, Sparkles } from "lucide-react";
+import { Palette, Wrench, RefreshCw, Server, Rocket, Sparkles, Target } from "lucide-react";
 
 const services = [
   {
@@ -31,6 +31,12 @@ const services = [
     icon: Sparkles,
     title: "Free Homepage Demo",
     desc: "Not sure what your business could look like online? I'll design a homepage concept before you commit.",
+  },
+  {
+    icon: Target,
+    title: "Lead Generation",
+    desc: "I research and find potential customers who fit your business, then provide relevant details and available contact information so you can focus on turning prospects into paying customers.",
+    price: "£3 per qualified lead",
   },
 ];
 
@@ -76,6 +82,9 @@ export const Services = () => {
                 </div>
                 <h3 className="font-display font-semibold text-lg">{s.title}</h3>
                 <p className="text-[hsl(var(--muted))] text-sm mt-2 leading-relaxed">{s.desc}</p>
+                {s.price && (
+                  <p className="text-sm font-semibold mt-3 text-[hsl(var(--accent))]">{s.price}</p>
+                )}
               </motion.div>
             );
           })}
