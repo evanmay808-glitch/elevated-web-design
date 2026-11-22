@@ -28,15 +28,15 @@ const services = [
     desc: "Get online with low upfront cost — rent a fully managed site monthly.",
   },
   {
-    icon: Sparkles,
-    title: "Free Homepage Demo",
-    desc: "Not sure what your business could look like online? I'll design a homepage concept before you commit.",
-  },
-  {
     icon: Target,
     title: "Lead Generation",
     desc: "I research and find potential customers who fit your business, then provide relevant details and available contact information so you can focus on turning prospects into paying customers.",
     price: "£3 per qualified lead",
+  },
+  {
+    icon: Sparkles,
+    title: "Free Homepage Demo",
+    desc: "Not sure what your business could look like online? I'll design a homepage concept before you commit.",
   },
 ];
 
