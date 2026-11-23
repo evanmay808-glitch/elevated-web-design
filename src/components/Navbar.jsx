@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, ArrowUpRight, Moon, Sun } from "lucide-react";
 import { emailLinkProps } from "../lib/site";
 
 const links = [
@@ -11,6 +11,34 @@ const links = [
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      return localStorage.getItem("evans-theme") === "dark";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+    try {
+      localStorage.setItem("evans-theme", darkMode ? "dark" : "light");
+    } catch {
+      // Theme still works for this visit when storage is unavailable.
+    }
+  }, [darkMode]);
+
+  const themeToggle = (
+    <button
+      type="button"
+      onClick={() => setDarkMode(value => !value)}
+      className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[hsl(var(--border))] text-[hsl(var(--fg))] transition-colors hover:bg-[hsl(var(--bg-soft))]"
+      aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+      title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+    </button>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -24,6 +52,7 @@ export const Navbar = () => {
             {links.map(link => <a key={link.href} href={link.href} className="text-sm text-[hsl(var(--muted))] hover:text-[hsl(var(--fg))] transition-colors">{link.label}</a>)}
           </nav>
           <div className="flex items-center gap-3">
+            {themeToggle}
             <a {...emailLinkProps("Free homepage concept request")} className="hidden sm:inline-flex btn-accent items-center gap-2 rounded-full px-5 py-2.5 text-sm">
               Get a free demo <ArrowUpRight size={15} />
             </a>
