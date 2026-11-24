@@ -62,53 +62,51 @@ button { font: inherit; }
   box-shadow: 0 12px 32px rgb(0 0 0 / .3);
 }
 
-:root[data-theme="dark"] .text-gradient {
-  background-image: linear-gradient(110deg, hsl(var(--fg)) 12%, hsl(var(--accent-2)) 88%);
+/* Keep the hero copy legible and the highlighted word softly accented. */
+:root[data-theme="dark"] [data-testid="hero-section"] h1 .text-gradient {
+  background-image: linear-gradient(110deg, hsl(var(--accent)) 12%, hsl(var(--accent-2)) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="dark"] [data-testid="hero-section"] p {
+  color: hsl(var(--fg) / .82);
+}
+
+:root[data-theme="dark"] [data-testid="hero-section"] .glass {
+  background: hsl(var(--surface));
+  border-color: hsl(var(--border));
+  color: hsl(var(--muted));
 }
 
 :root[data-theme="dark"] .btn-accent {
   background: hsl(var(--fg));
   color: hsl(var(--bg));
 }
-
 :root[data-theme="dark"] .btn-accent:hover {
   background: hsl(var(--accent-2));
   color: hsl(var(--bg));
 }
-
 :root[data-theme="dark"] .btn-ghost {
   border-color: hsl(var(--border));
   color: hsl(var(--fg));
 }
-
 :root[data-theme="dark"] .btn-ghost:hover {
   background: hsl(var(--bg-soft));
   border-color: hsl(var(--accent));
 }
-
-:root[data-theme="dark"] .cookie-backdrop {
-  background: rgb(0 0 0 / .72);
-}
-
+:root[data-theme="dark"] .cookie-backdrop { background: rgb(0 0 0 / .72); }
 :root[data-theme="dark"] .cookie-panel {
   background: hsl(var(--surface));
   border-color: hsl(var(--border));
   color: hsl(var(--fg));
 }
-
-:root[data-theme="dark"] .section-eyebrow {
-  color: hsl(var(--accent-2));
-}
-
+:root[data-theme="dark"] .section-eyebrow { color: hsl(var(--accent-2)); }
 :root[data-theme="dark"] .legal-copy,
 :root[data-theme="dark"] .legal-copy p,
-:root[data-theme="dark"] .legal-copy li {
-  color: hsl(var(--muted));
-}
-
-:root[data-theme="dark"] .legal-copy h3 {
-  color: hsl(var(--fg));
-}
+:root[data-theme="dark"] .legal-copy li { color: hsl(var(--muted)); }
+:root[data-theme="dark"] .legal-copy h3 { color: hsl(var(--fg)); }
 
 @media (prefers-reduced-motion: no-preference) {
   :root[data-theme="dark"] *,
