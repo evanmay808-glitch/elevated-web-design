@@ -62,12 +62,14 @@ button { font: inherit; }
   box-shadow: 0 12px 32px rgb(0 0 0 / .3);
 }
 
-/* Keep the hero copy legible and the highlighted word softly accented. */
+/* Keep the hero copy legible and the highlighted word clear in dark mode. */
 :root[data-theme="dark"] [data-testid="hero-section"] h1 .text-gradient {
-  background-image: linear-gradient(110deg, hsl(var(--accent)) 12%, hsl(var(--accent-2)) 88%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none !important;
+  background-image: none !important;
+  background-clip: initial !important;
+  -webkit-background-clip: initial !important;
+  color: hsl(var(--accent-2)) !important;
+  -webkit-text-fill-color: hsl(var(--accent-2)) !important;
 }
 
 :root[data-theme="dark"] [data-testid="hero-section"] p {
